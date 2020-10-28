@@ -71,7 +71,8 @@ PRODUCT_PACKAGES += \
     AEXPapers \
     WallpaperPickerGoogle \
     Recorder \
-    ExactCalculator
+    ExactCalculator \
+    Etar
 
 # Cutout control overlays
 PRODUCT_PACKAGES += \
