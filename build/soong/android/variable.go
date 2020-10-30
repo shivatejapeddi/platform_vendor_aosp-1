@@ -76,6 +76,10 @@ type Product_variables struct {
 		Cflags []string
 		Whole_static_libs []string
 	}
+
+	Target_has_no_nat_update struct {
+		Cflags []string
+	}
 }
 
 type ProductVariables struct {
@@ -104,4 +108,5 @@ type ProductVariables struct {
 	Target_ignores_ftp_pptp_conntrack_failure  *bool `json:",omitempty"`
 	Qcom_um_soong_namespace  *string `json:",omitempty"`
 	Target_surfaceflinger_fod_lib  *string `json:",omitempty"`
+	Target_has_no_nat_update *bool `json:",omitempty"`
 }
