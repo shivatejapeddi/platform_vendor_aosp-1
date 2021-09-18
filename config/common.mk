@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Gapps
-$(call inherit-product, vendor/aosp/config/gapps.mk)
+#$(call inherit-product, vendor/aosp/config/gapps.mk)
 
 include vendor/aosp/config/version.mk
 
@@ -44,14 +44,14 @@ $(call inherit-product, vendor/aosp/config/bootanimation.mk)
 
 # Common Overlay
 DEVICE_PACKAGE_OVERLAYS += \
-    vendor/aosp/overlay/common 
+    vendor/aosp/overlay/common
 
 # Exclude RRO Enforcement
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS +=  \
     vendor/aosp/overlay
 
 # Face Unlock
-TARGET_FACE_UNLOCK_SUPPORTED ?= true
+TARGET_FACE_UNLOCK_SUPPORTED := false
 ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
 PRODUCT_PACKAGES += \
     FaceUnlockService
@@ -63,12 +63,12 @@ endif
 
 # FOD
 ifeq ($(EXTRA_FOD_ANIMATIONS),true)
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     FodAnimationResources
 endif
 
 # Enforce privapp-permissions whitelist
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+#PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.control_privapp_permissions=enforce
 
 PRODUCT_PACKAGES += \
@@ -91,11 +91,11 @@ PRODUCT_PACKAGES += \
     QuickAccessWallet
 
 # Config
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     SimpleDeviceConfig
 
 # Cutout control overlays
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     HideCutout \
     StatusBarStock
 
@@ -108,13 +108,8 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 PRODUCT_PACKAGES += \
     libjni_latinimegoogle
 
-# Cutout control overlays
-PRODUCT_PACKAGES += \
-    HideCutout \
-    StatusBarStock
-
 # Immersive Navigation
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     ImmersiveNavigationOverlay
 
 ifneq ($(WITH_GAPPS),true)
@@ -199,7 +194,7 @@ PRODUCT_PACKAGES += \
     StitchImage
 
 # ThemeOverlays
-include packages/overlays/Themes/themes.mk
+#include packages/overlays/Themes/themes.mk
 
 PRODUCT_PACKAGES += \
     ThemePicker
