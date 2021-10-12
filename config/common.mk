@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Gapps
-#$(call inherit-product, vendor/aosp/config/gapps.mk)
+$(call inherit-product, vendor/aosp/config/gapps.mk)
 
 include vendor/aosp/config/version.mk
 
@@ -25,6 +25,14 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_PACKAGES += \
     adb_root
 endif
+
+# Enable support of one-handed mode
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.support_one_handed_mode=true
+
+
+# Selinux
+SELINUX_IGNORE_NEVERALLOWS ?= true
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
